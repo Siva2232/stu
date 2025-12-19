@@ -18,6 +18,7 @@ export default function Services() {
         "https://media.gettyimages.com/id/493837244/photo/studio-shot-of-young-beautiful-woman.jpg?s=612x612&w=gi&k=20&c=uV2U9seF0GZoUbmc9Sr9vqx6Q0niUC1eliVGuGaKK8U=",
         "https://www.oxanaalexphotography.com/wp-content/uploads/2023/04/modeling-poses-1.jpg",
       ],
+            cta: true,
     },
     {
       icon: <Camera className="w-8 h-8" />,
@@ -34,6 +35,7 @@ export default function Services() {
         "https://stored-cf.slickpic.com/Mjg1ODI1MDZmMThjNTg,/20211226/MTgzMDE1MTVjOGM1/pn/400/ethereal-beauty-starry-makeup.jpg.webp",
         "https://media.gettyimages.com/id/636160600/photo/studio-shot-of-young-beautiful-woman.jpg?s=612x612&w=gi&k=20&c=mwhPYT2LXuUotou23w8N7vd7EnKJNFsrTz0cALF1RHc=",
       ],
+            cta: true,
     },
     {
       icon: <Users className="w-8 h-8" />,
@@ -138,13 +140,17 @@ export default function Services() {
                 {/* CTA Button */}
                 {service.cta && (
                   <div className="mt-8">
-                    <Button
-                      variant="dark"
-                      size="lg"
-                      className="w-full rounded-full py-4 text-lg font-semibold shadow-lg hover:shadow-xl"
-                    >
-                      EXPLORE PACKAGES →
-                    </Button>
+                   <Button
+  variant="ghost"
+  size="lg"
+  className="w-full rounded-full py-4 text-lg font-semibold
+             bg-white text-black
+             shadow-lg hover:shadow-xl
+             hover:bg-white hover:text-black"
+>
+  EXPLORE PACKAGES →
+</Button>
+
                   </div>
                 )}
               </div>

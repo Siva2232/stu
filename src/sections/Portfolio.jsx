@@ -17,6 +17,18 @@ const portfolioItems = [
   { id: 10, title: "Rue Victor Smart", author: "by Alice Chen", category: "EDITORIAL", size: "md", img: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&q=80" },
   { id: 11, title: "Full-Length Moment", author: "by Alex Chen", category: "BEAUTY", size: "lg", img: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80" },
   { id: 12, title: "Curveside", author: "by Alex Chen", category: "COMMERCIAL", size: "sm", img: "https://images.unsplash.com/photo-1581338832824-66db8c7c5a3d?w=800&q=80" },
+   { id: 1, title: "Urban Edge Series", author: "by Aida Chen", category: "EDITORIAL", size: "lg", img: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80" },
+  { id: 2, title: "Enchanted Series", author: "by Alex Chen", category: "BEAUTY", size: "md", img: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=800&q=80" },
+  { id: 3, title: "Facing the Wind", author: "by Alex Chen", category: "LIFESTYLE", size: "sm", img: "https://images.unsplash.com/photo-1517841905240-472988bab751?w=800&q=80" },
+  { id: 4, title: "Sunset Glow", author: "by Aida Chen", category: "EDITORIAL", size: "md", img: "https://images.unsplash.com/photo-1483985988355-763728e19348?w=800&q=80" },
+  { id: 5, title: "Night Glow", author: "by Aida Chen", category: "BEAUTY", size: "lg", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=80" },
+  { id: 6, title: "Amsterdam Streets", author: "by Alex Chen", category: "LIFESTYLE", size: "sm", img: "https://images.unsplash.com/photo-1517732306149-e8f829eb588a?w=800&q=80" },
+  { id: 7, title: "Ethereal Echoes", author: "by Aida Chen", category: "EDITORIAL", size: "md", img: "https://images.unsplash.com/photo-1496747650943-ccc9e75751a6?w=800&q=80" },
+  { id: 8, title: "Minimal Rebellion", author: "by Alice Chen", category: "COMMERCIAL", size: "lg", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80" },
+  { id: 9, title: "Autumn’s Blaze", author: "by Alice Chen", category: "LIFESTYLE", size: "sm", img: "https://images.unsplash.com/photo-1470229722913-1d0399a6c3e9?w=800&q=80" },
+  { id: 10, title: "Rue Victor Smart", author: "by Alice Chen", category: "EDITORIAL", size: "md", img: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&q=80" },
+  { id: 11, title: "Full-Length Moment", author: "by Alex Chen", category: "BEAUTY", size: "lg", img: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80" },
+  { id: 12, title: "Curveside", author: "by Alex Chen", category: "COMMERCIAL", size: "sm", img: "https://images.unsplash.com/photo-1581338832824-66db8c7c5a3d?w=800&q=80" },
 ];
 
 export default function Portfolio() {

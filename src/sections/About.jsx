@@ -103,11 +103,12 @@ export default function About() {
               transition={{ duration: 1 }}
               className="rounded-3xl overflow-hidden border border-yellow-400/30"
             >
-              <img
-                src="https://media.istockphoto.com/id/1346125184/photo/group-of-successful-multiethnic-business-team.jpg"
-                alt="Studio Team"
-                className="w-full h-full object-cover"
-              />
+             <img
+  src="https://cdn.shopify.com/s/files/1/0016/9243/4534/files/alexander-dummer-as4duj2j7r4-unsplash.jpg?v=1707237388"
+  alt="Studio Team"
+  className="w-full h-full object-cover"
+/>
+
             </motion.div>
           </div>
         </Container>

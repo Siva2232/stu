@@ -103,7 +103,7 @@ export default function HeroBook() {
                     Explore Portfolio
                   </Button>
                   <Button className="border-2 border-yellow-500/60 text-white px-12 py-5 rounded-full text-xl backdrop-blur hover:bg-yellow-500/10 transition-all">
-                    Join the Cooperative
+                   Learn More
                   </Button>
                 </motion.div>
               </div>
@@ -111,9 +111,9 @@ export default function HeroBook() {
           </AnimatePresence>
 
           {/* Page Number Indicator */}
-          <div className="mt-8 text-center text-white/60 text-sm tracking-wider">
+          {/* <div className="mt-8 text-center text-white/60 text-sm tracking-wider">
             Page {page + 1} / {bookPages.length}
-          </div>
+          </div> */}
 
           {/* Navigation Arrows */}
           <button

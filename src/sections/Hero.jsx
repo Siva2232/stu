@@ -57,7 +57,7 @@ export default function HeroBook() {
         >
           <BookOpen className="w-8 h-8 sm:w-10 sm:h-10" />
           <p className="text-xs sm:text-sm uppercase tracking-[0.4em] font-medium text-center">
-            Model Studio Cooperative Portfolio
+            Perfect Digital Press Studio Cooperative Portfolio
           </p>
         </motion.div>
 

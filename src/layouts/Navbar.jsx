@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Facebook, Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import hhhh from '../assets/hhhh.jpg';
 const navLinks = [
   { name: "HOME", path: "/" },
   { name: "ABOUT US", path: "/about" },
@@ -110,11 +110,16 @@ export default function Navbar() {
             onClick={() => handleNavClick("/")}
             className="flex items-center gap-3 hover:opacity-80 transition"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-black font-black text-xl shadow-md">
-              MS
-            </div>
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/80 backdrop-blur-md shadow-lg flex items-center justify-center">
+  <img
+    src={hhhh}
+    alt="Model Studio Cooperative Logo"
+    className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+  />
+</div>
+
             <span className="text-xl font-semibold text-black tracking-wider hidden sm:block">
-              MODEL STUDIO COOPERATIVE
+             PERFECT DIGITAL PRESS
             </span>
           </button>
 

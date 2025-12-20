@@ -1,5 +1,6 @@
 import Hero from "../sections/Hero";
 import About from "../sections/About";
+import Habout from "../sections/Habout";
 import Services from "../sections/Services";
 import Process from "../sections/Process";
 import Portfolio from "../sections/Portfolio";
@@ -10,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <About />
+      <Habout />
       <Services />
       <Process />
       <Portfolio />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
-
+import photo from '../assets/photo.jpg';
 // WhatsApp business number
 const whatsappNumber = "9746683778";
 
@@ -45,7 +45,7 @@ const products = [
     price: "₹80,900",
     pages: "50 pages · Genuine Leather",
     description: "Handcrafted genuine leather album with embossing and archival paper.",
-    image: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    image: photo,
   },
   {
     id: 4,
@@ -72,7 +72,7 @@ const products = [
     price: "₹31,400",
     pages: "40 pages · Linen Cover",
     description: "Simple, elegant linen cover with clean white pages for a minimalist look.",
-    image: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    image: photo,
   },
   {
     id: 7,
@@ -81,7 +81,7 @@ const products = [
     price: "₹71,900",
     pages: "60 pages · Velvet Cover",
     description: "Opulent velvet cover with gold foil detailing and thick archival pages.",
-    image: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    image: photo,
   },
   {
     id: 8,
@@ -104,7 +104,7 @@ const products = [
   {
     id: 10,
     category: "Wedding",
-    name: "Signature Guest Book Album",
+    name: "Signature Guest Album",
     price: "₹40,400",
     pages: "40 pages · Guest Signing",
     description: "Wedding album with blank pages for guest messages and photos.",

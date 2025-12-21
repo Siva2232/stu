@@ -318,7 +318,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="mb-4 md:mb-8 text-xs md:text-base tracking-[0.5em] uppercase text-[#f7ef22]/90 font-light"
+              className="mb-4 md:mb-8 text-xs md:text-base tracking-[0.5em] uppercase text-[#f7ef22]/90 font-light mt-4"
             >
               Luxury Wedding Photography Studio
             </motion.p>

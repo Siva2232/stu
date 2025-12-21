@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <>
       <About />
-      <Process />
+      {/* <Process /> */}
       <ContactCTA />
     </>
   );

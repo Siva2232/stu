@@ -6,7 +6,7 @@ export default function ServicesPage() {
   return (
     <>
       <ServiceD />
-      <Process />
+      {/* <Process /> */}
       <ContactCTA />
     </>
   );

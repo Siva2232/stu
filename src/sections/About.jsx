@@ -7,7 +7,7 @@ export default function About() {
   return (
     <>
       {/* ===== HERO / FIRST SECTION ===== */}
-      <section className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center">
+      <section className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center mt-5">
         {/* Parallax Background Image */}
         <motion.div
           initial={{ scale: 1.1 }}

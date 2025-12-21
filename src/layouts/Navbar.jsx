@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Facebook, Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import hhhh from '../assets/hhhh.jpg';
+
 const navLinks = [
   { name: "HOME", path: "/" },
   { name: "ABOUT US", path: "/about" },
@@ -104,23 +105,21 @@ export default function Navbar() {
 
       {/* Navbar */}
       <header className="fixed top-0 left-0 w-full z-40 bg-white/80 backdrop-blur-md border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
-          {/* Logo */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-20 md:h-24 flex items-center justify-between">
+          {/* Logo - larger size + no background card */}
           <button
             onClick={() => handleNavClick("/")}
-            className="flex items-center gap-4 hover:opacity-80 transition cursor-pointer"
+            className="flex items-center gap-5 md:gap-8 hover:opacity-80 transition cursor-pointer"
           >
-            <div className="w-20 h-20 sm:w-20 sm:h-18 rounded-xl bg-white/80 backdrop-blur-md shadow-lg flex items-center justify-center">
-              <img
-                src={hhhh}
-                alt="Perfect Digital Press Logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
+            <img
+              src={hhhh}
+              alt="Perfect Digital Press Logo"
+              className="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 object-contain drop-shadow-xl"
+            />
 
-            <span className="text-2xl font-semibold text-black tracking-wider hidden sm:block">
+            {/* <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-black tracking-wider hidden sm:block">
               PERFECT DIGITAL PRESS
-            </span>
+            </span> */}
           </button>
 
           {/* Desktop Navigation */}
@@ -199,7 +198,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="lg:hidden fixed inset-x-0 top-20 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-2xl z-40 pt-6 pb-10"
+              className="lg:hidden fixed inset-x-0 top-20 md:top-24 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-2xl z-40 pt-6 pb-10"
             >
               <nav className="flex flex-col px-6 space-y-1">
                 {navLinks.map((link) => {

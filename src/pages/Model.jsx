@@ -1,170 +1,281 @@
 import React, { useState } from 'react';
-import { Search, Instagram, ArrowRight, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom"; // <-- Import Link
+import { Search } from "lucide-react";
 
-// Realistic client work / campaign data with real-looking images
-const works = [
+// WhatsApp business number
+const whatsappNumber = "15551234567";
+
+// Inline WhatsApp SVG
+const WhatsAppIcon = ({ size = 24, className = "" }) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.884 3.088" />
+  </svg>
+);
+
+const products = [
   {
     id: 1,
-    client: "Nike Global",
-    campaign: "Move Together 2025",
-    description: "Inclusive athletic campaign featuring diverse MSC talent across sports and lifestyles.",
-    models: ["Luna Voss", "Amina Soleil", "Sofia Reyes"],
-    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    category: "Wedding",
+    name: "Classic Wedding Album",
+    price: "$399.00",
+    pages: "40 pages · Premium Layflat",
+    description: "Timeless hardcover album with thick layflat pages for panoramic spreads.",
+    image: "https://images.unsplash.com/photo-1606213196839-7c12e4e26e74?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
   {
     id: 2,
-    client: "Vogue Paris",
-    campaign: "Beauty in Diversity",
-    description: "Editorial spread celebrating global beauty standards with non-traditional models.",
-    models: ["Kai Rivera", "Zara Kim", "Nia Okoro"],
-    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    category: "Fashion",
+    name: "Editorial Portfolio Book",
+    price: "$549.00",
+    pages: "60 pages · Matte Finish",
+    description: "Professional portfolio with sleek black cover and high-quality matte prints.",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
   {
     id: 3,
-    client: "Gucci",
-    campaign: "Eternal Youth",
-    description: "High-fashion campaign blending street style with luxury for the new generation.",
-    models: ["Theo Marx", "Freya Lind", "Jaden Cole"],
-    image: "https://images.unsplash.com/photo-1539109136881-3d8f7e8d8b3a?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    category: "Luxury",
+    name: "Leather Bound Heirloom",
+    price: "$899.00",
+    pages: "50 pages · Genuine Leather",
+    description: "Handcrafted genuine leather album with embossing and archival paper.",
+    image: "https://images.unsplash.com/photo-1519733872085-2c3c0c5e0e5e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
   {
     id: 4,
-    client: "Adidas",
-    campaign: "Impossible Is Nothing",
-    description: "Empowering stories of athletes breaking barriers, shot in urban environments.",
-    models: ["Elias Nova", "Amir Khan", "Sofia Reyes"],
-    image: "https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    category: "Family",
+    name: "Family Memory Album",
+    price: "$299.00",
+    pages: "30 pages · Softcover",
+    description: "Everyday moments preserved in a beautiful softcover keepsake album.",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
   {
     id: 5,
-    client: "L'Oréal Paris",
-    campaign: "Because You're Worth It",
-    description: "Beauty campaign highlighting natural diversity and self-confidence.",
-    models: ["Luna Voss", "Zara Kim", "Nia Okoro"],
-    image: "https://images.unsplash.com/photo-1524504388944-b5a0099b3d6c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    category: "Wedding",
+    name: "Modern Flush Mount",
+    price: "$649.00",
+    pages: "50 pages · Acrylic Cover",
+    description: "Contemporary album with crystal acrylic cover and seamless panoramic pages.",
+    image: "https://images.unsplash.com/photo-1622483762023-4c38b8588f12?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
   {
     id: 6,
-    client: "Calvin Klein",
-    campaign: "Modern Cotton",
-    description: "Minimalist lifestyle shoot focusing on comfort and authenticity.",
-    models: ["Mateo Silva", "Kai Rivera", "Amina Soleil"],
-    image: "https://images.unsplash.com/photo-1483985988367-3f5b3840f5b5?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    category: "Minimalist",
+    name: "Clean Linen Album",
+    price: "$349.00",
+    pages: "40 pages · Linen Cover",
+    description: "Simple, elegant linen cover with clean white pages for a minimalist look.",
+    image: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+  },
+  {
+    id: 7,
+    category: "Luxury",
+    name: "Velvet Luxury Edition",
+    price: "$799.00",
+    pages: "60 pages · Velvet Cover",
+    description: "Opulent velvet cover with gold foil detailing and thick archival pages.",
+    image: "https://images.unsplash.com/photo-1616627561839-074735c6f3f5?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+  },
+  {
+    id: 8,
+    category: "Fashion",
+    name: "Lookbook Pro",
+    price: "$479.00",
+    pages: "50 pages · Gloss Finish",
+    description: "High-gloss fashion lookbook perfect for models and designers.",
+    image: "https://images.unsplash.com/photo-1516961642265-531546e84af2?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+  },
+  {
+    id: 9,
+    category: "Family",
+    name: "Year in Review Album",
+    price: "$279.00",
+    pages: "36 pages · Hardcover",
+    description: "Annual family album to capture a year's worth of memories.",
+    image: "https://images.unsplash.com/photo-1545231028-62386a9dd6d8?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+  },
+  {
+    id: 10,
+    category: "Wedding",
+    name: "Signature Guest Book Album",
+    price: "$449.00",
+    pages: "40 pages · Guest Signing",
+    description: "Wedding album with blank pages for guest messages and photos.",
+    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+  },
+  {
+    id: 11,
+    category: "Minimalist",
+    name: "White Space Album",
+    price: "$329.00",
+    pages: "40 pages · Clean Design",
+    description: "Minimal white album with plenty of negative space for artistic layouts.",
+    image: "https://images.unsplash.com/photo-1617098900591-3b907b48c571?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+  },
+  {
+    id: 12,
+    category: "Luxury",
+    name: "Gold Edition Album",
+    price: "$999.00",
+    pages: "60 pages · Gold Accents",
+    description: "Limited gold-embossed luxury album for the most special occasions.",
+    image: "https://images.unsplash.com/photo-1571171637577-3e4f0e7d5c5e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
 ];
 
-export default function Works() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+const categories = ["All", "Wedding", "Fashion", "Family", "Luxury", "Minimalist"];
 
-  const filteredWorks = works.filter(work =>
-    work.client.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    work.campaign.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    work.description.toLowerCase().includes(searchQuery.toLowerCase())
+export default function AlbumsShop() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const filteredProducts = products.filter(product => {
+    const matchesSearch = 
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.pages.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
+    
+    return matchesSearch && matchesCategory;
+  });
+
+  const whatsappMessage = (product) => encodeURIComponent(
+    `Hi! I'm interested in the ${product.name} (${product.price}, ${product.pages}). Can you help me customize it with my photos and confirm availability?`
   );
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      {/* Fixed Header */}
-      
-
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-amber-950 opacity-90"></div>
-        <div className="absolute inset-0 bg-black/40"></div>
-
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tight text-white mb-8 leading-none">
-            Our Work.<br />
-            <span className="text-amber-400">Real Impact.</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto">
-            Campaigns and collaborations with leading global brands — powered by diverse, authentic talent.
-          </p>
-          <button className="bg-amber-500 text-black px-10 py-5 text-xl font-bold hover:bg-amber-400 transition shadow-2xl">
-            BOOK TALENT FOR YOUR PROJECT
-          </button>
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      {/* Title Section */}
+      <section className="bg-white pt-8 pb-6 md:pt-12 md:pb-8">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h1 className="text-3xl md:text-4xl font-black mb-2">Our Album Collection</h1>
+          <p className="text-sm md:text-base text-gray-600">Choose a style and customize with your photographs</p>
         </div>
       </section>
 
-      {/* Search Bar */}
-      <section className="py-12 bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-2xl mx-auto">
-            <div className="relative">
-              <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-500" size={24} />
-              <input
-                type="text"
-                placeholder="Search campaigns, clients, or projects..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-16 pr-8 py-5 text-lg rounded-full border-2 border-gray-300 focus:border-amber-500 focus:outline-none transition"
-              />
+      {/* Sticky Filter Bar */}
+      <div className="sticky top-0 bg-white z-30 shadow-md border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="py-4 md:py-5 space-y-4">
+            {/* Search Bar */}
+            <div className="w-full">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
+                <input
+                  type="text"
+                  placeholder="Search albums..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)} 
+                  className="w-full pl-12 pr-5 py-4 rounded-full border border-gray-300 focus:border-amber-500 focus:outline-none focus:ring-4 focus:ring-amber-200 transition-all text-base shadow-sm"
+                />
+              </div>
+            </div>
+
+            {/* Categories */}
+            <div className="flex flex-wrap justify-center gap-3">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-5 md:px-6 py-2.5 md:py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300 shadow-sm ${
+                    selectedCategory === cat
+                      ? "bg-amber-500 text-black ring-4 ring-amber-200"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Works Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4">CLIENT WORK & CAMPAIGNS</h2>
-            <p className="text-xl text-gray-600">Selected projects showcasing our talent in action</p>
-          </div>
+      {/* Products Grid */}
+      <section className="py-8 md:py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4 lg:gap-8">
+            {filteredProducts.map((product) => (
+              <Link
+                key={product.id}
+                to={`/album/${product.id}`} // Navigate to detailed page
+                className="group block"
+              >
+                <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
+                  <div className="aspect-[3/4] relative overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                      <div className="text-white">
+                        <h3 className="text-base font-bold">{product.name}</h3>
+                        <p className="text-xl font-bold">{product.price}</p>
+                      </div>
+                    </div>
+                  </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {filteredWorks.map((work) => (
-              <div key={work.id} className="group cursor-pointer bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
-                <div className="aspect-video relative overflow-hidden">
-                  <img
-                    src={work.image}
-                    alt={work.campaign}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <div className="absolute bottom-6 left-6 text-white">
-                    <p className="text-sm uppercase tracking-wider text-amber-400 font-medium">{work.client}</p>
-                    <h3 className="text-2xl md:text-3xl font-black mt-1">{work.campaign}</h3>
+                  <div className="p-4 md:p-5 text-center">
+                    <span className="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider rounded-full mb-2">
+                      {product.category}
+                    </span>
+                    <h3 className="text-base md:text-lg font-bold mb-1 line-clamp-2">{product.name}</h3>
+                    <p className="text-xs md:text-sm text-gray-600 mb-2">{product.pages}</p>
+                    <p className="text-xl md:text-2xl font-bold text-amber-600 mb-4">{product.price}</p>
+
+                    {/* WhatsApp Button - Stop propagation to prevent navigating when clicking button */}
+                    <a
+                      href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage(product)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()} // Prevent Link navigation
+                      className="inline-flex flex-col md:flex-row items-center justify-center w-full gap-1 md:gap-2 bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold py-4 md:py-3.5 rounded-full transition text-xs md:text-sm shadow-md"
+                    >
+                      <WhatsAppIcon size={20} className="text-white flex-shrink-0" />
+                      <span className="whitespace-nowrap">Order on WhatsApp</span>
+                    </a>
                   </div>
                 </div>
-
-                <div className="p-8">
-                  <p className="text-gray-700 mb-6 leading-relaxed">{work.description}</p>
-                  <p className="text-sm text-gray-500 mb-4">
-                    Featured Talent: {work.models.join(", ")}
-                  </p>
-                  <a href="#" className="inline-flex items-center text-amber-600 font-bold hover:text-amber-700 transition">
-                    View Campaign Details <ArrowRight className="ml-2 w-5 h-5" />
-                  </a>
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
 
-          {filteredWorks.length === 0 && (
-            <p className="text-center py-20 text-2xl text-gray-500">
-              No campaigns found. Try a different search term.
-            </p>
+          {filteredProducts.length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-lg md:text-xl text-gray-500">No albums match your search.</p>
+            </div>
           )}
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-r from-amber-600 to-amber-700 text-black">
+      {/* Bottom CTA */}
+      <section className="py-16 md:py-20 bg-gradient-to-r from-amber-600 to-amber-700 text-black">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-6xl md:text-8xl font-black mb-10">YOUR PROJECT NEXT?</h2>
-          <p className="text-2xl mb-16 max-w-4xl mx-auto">
-            Let's create something extraordinary together. Book our talent for your next campaign.
+          <h2 className="text-3xl md:text-5xl font-black mb-4 md:mb-6">Bring Your Photos to Life</h2>
+          <p className="text-base md:text-xl mb-8 md:mb-10 max-w-3xl mx-auto">
+            Message us to start your custom album today.
           </p>
-          <button className="bg-black text-white px-16 py-8 text-2xl font-bold hover:bg-gray-900 transition shadow-2xl">
-            START A PROJECT <ArrowRight className="inline ml-4" />
-          </button>
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hi! I want to create a custom photograph album.')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex flex-col md:flex-row items-center gap-2 bg-black text-white px-8 md:px-12 py-5 md:py-6 text-lg md:text-xl font-bold hover:bg-gray-900 active:bg-gray-800 transition rounded-full shadow-xl"
+          >
+            <WhatsAppIcon size={32} className="text-white flex-shrink-0" />
+            <span>Chat on WhatsApp</span>
+          </a>
         </div>
       </section>
-
-      {/* Footer */}
-     
     </div>
   );
 }

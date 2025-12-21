@@ -108,18 +108,18 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => handleNavClick("/")}
-            className="flex items-center gap-3 hover:opacity-80 transition"
+            className="flex items-center gap-4 hover:opacity-80 transition cursor-pointer"
           >
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/80 backdrop-blur-md shadow-lg flex items-center justify-center">
-  <img
-    src={hhhh}
-    alt="Model Studio Cooperative Logo"
-    className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
-  />
-</div>
+            <div className="w-20 h-20 sm:w-20 sm:h-18 rounded-xl bg-white/80 backdrop-blur-md shadow-lg flex items-center justify-center">
+              <img
+                src={hhhh}
+                alt="Perfect Digital Press Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
 
-            <span className="text-xl font-semibold text-black tracking-wider hidden sm:block">
-             PERFECT DIGITAL PRESS
+            <span className="text-2xl font-semibold text-black tracking-wider hidden sm:block">
+              PERFECT DIGITAL PRESS
             </span>
           </button>
 
@@ -132,7 +132,7 @@ export default function Navbar() {
                 <button
                   key={link.name}
                   onClick={() => handleNavClick(link.path)}
-                  className={`relative text-sm font-medium uppercase tracking-wider transition-colors pb-2 ${
+                  className={`relative text-sm font-medium uppercase tracking-wider transition-colors pb-2 cursor-pointer ${
                     isActive ? "text-black" : "text-gray-600 hover:text-black"
                   }`}
                 >
@@ -153,18 +153,18 @@ export default function Navbar() {
 
           {/* Desktop Social */}
           <div className="hidden lg:flex items-center gap-6">
-            <a href="#" aria-label="Facebook">
-              <Facebook size={20} className="text-gray-600 hover:text-yellow-600 transition cursor-pointer" />
+            <a href="#" aria-label="Facebook" className="cursor-pointer">
+              <Facebook size={20} className="text-gray-600 hover:text-yellow-600 transition" />
             </a>
-            <a href="#" aria-label="Instagram">
-              <Instagram size={20} className="text-gray-600 hover:text-yellow-600 transition cursor-pointer" />
+            <a href="#" aria-label="Instagram" className="cursor-pointer">
+              <Instagram size={20} className="text-gray-600 hover:text-yellow-600 transition" />
             </a>
           </div>
 
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-black z-50"
+            className="lg:hidden text-black z-50 cursor-pointer"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
@@ -209,8 +209,8 @@ export default function Navbar() {
                     <button
                       key={link.name}
                       onClick={() => handleNavClick(link.path)}
-                      className={`py-4 text-left text-lg font-medium uppercase tracking-wider border-b border-gray-100 last:border-0 flex items-center justify-between ${
-                        isActive ? "text-black" : "text-gray-600"
+                      className={`py-4 text-left text-lg font-medium uppercase tracking-wider border-b border-gray-100 last:border-0 flex items-center justify-between cursor-pointer ${
+                        isActive ? "text-black" : "text-gray-600 hover:text-black"
                       }`}
                     >
                       <span>{link.name}</span>
@@ -223,10 +223,10 @@ export default function Navbar() {
                 })}
 
                 <div className="flex justify-center gap-10 mt-8 pt-6 border-t border-gray-100">
-                  <a href="#" aria-label="Facebook">
+                  <a href="#" aria-label="Facebook" className="cursor-pointer">
                     <Facebook size={26} className="text-gray-600 hover:text-yellow-600 transition" />
                   </a>
-                  <a href="#" aria-label="Instagram">
+                  <a href="#" aria-label="Instagram" className="cursor-pointer">
                     <Instagram size={26} className="text-gray-600 hover:text-yellow-600 transition" />
                   </a>
                 </div>

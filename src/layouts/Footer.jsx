@@ -18,15 +18,15 @@ export default function Footer() {
     { icon: Linkedin, href: "#" },
   ];
 
-  const links = [
-    "Home",
-    "About",
-    "Models",
-    "Portfolio",
-    "Services",
-    "Careers",
-    "Contact",
-  ];
+const links = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Models", href: "/models" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
+];
+
 
   const works = [
     "Editorial Noir",
@@ -173,23 +173,29 @@ export default function Footer() {
                 Navigation
               </h3>
               <ul className="space-y-4 md:space-y-5 text-center lg:text-left">
-                {links.map((link, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.06 }}
-                  >
-                    <a
-                      href="#"
-                      className="group flex items-center justify-center lg:justify-start text-base md:text-lg text-gray-400 hover:text-yellow-400 transition-all duration-300"
-                    >
-                      {link}
-                      <ArrowUpRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all" />
-                    </a>
-                  </motion.li>
-                ))}
+               {links.map((link, i) => (
+  <motion.li
+    key={link.label}
+    initial={{ opacity: 0, x: -20 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: i * 0.06 }}
+  >
+    <a
+      href={link.href}
+      className="group flex items-center justify-center lg:justify-start
+                 text-base md:text-lg text-gray-400
+                 hover:text-yellow-400 transition-all duration-300"
+    >
+      {link.label}
+      <ArrowUpRight
+        className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100
+                   translate-x-2 group-hover:translate-x-0 transition-all"
+      />
+    </a>
+  </motion.li>
+))}
+
               </ul>
             </div>
 

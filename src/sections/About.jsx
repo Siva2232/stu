@@ -318,7 +318,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="mb-8 text-sm md:text-base tracking-[0.5em] uppercase text-[#FFFF00]/90 font-light"
+              className="mb-4 md:mb-8 text-xs md:text-base tracking-[0.5em] uppercase text-[#FFFF00]/90 font-light"
             >
               Luxury Wedding Photography Studio
             </motion.p>
@@ -328,7 +328,7 @@ export default function About() {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.4, delay: 0.4, ease: "easeOut" }}
-              className="text-[clamp(4rem,10vw,9rem)] font-black leading-[0.95] text-white mb-10 tracking-tight"
+              className="text-[clamp(3.5rem,9vw,9rem)] font-black leading-[0.95] text-white mb-6 md:mb-10 tracking-tight"
             >
               We Capture Love
               <br />
@@ -338,7 +338,7 @@ export default function About() {
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 1.5, delay: 1.2 }}
-                  className="absolute bottom-2 left-0 h-1 bg-[#FFFF00]/50 -z-10"
+                  className="absolute bottom-1 md:bottom-2 left-0 h-1 bg-[#FFFF00]/50 -z-10"
                 />
               </span>
             </motion.h1>
@@ -348,7 +348,7 @@ export default function About() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.8 }}
-              className="max-w-4xl mx-auto text-xl md:text-2xl text-white/80 leading-relaxed mb-16 font-light"
+              className="max-w-4xl mx-auto text-lg md:text-2xl text-white/80 leading-relaxed mb-10 md:mb-16 font-light"
             >
               A boutique studio crafting timeless, emotional, and cinematic wedding stories
               <br className="hidden md:block" />
@@ -360,12 +360,12 @@ export default function About() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1.2 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center"
             >
-              <Button className="group relative overflow-hidden bg-[#FFFF00] text-black px-16 py-7 rounded-full text-xl font-bold hover:scale-105 transition-all duration-500 shadow-2xl">
+              <Button className="group relative overflow-hidden bg-[#FFFF00] text-black px-12 md:px-16 py-5 md:py-7 rounded-full text-lg md:text-xl font-bold hover:scale-105 transition-all duration-500 shadow-2xl">
                 <span className="relative z-10 flex items-center gap-3">
                   View Wedding Galleries
-                  <Sparkles size={24} className="group-hover:rotate-12 transition" />
+                  <Sparkles size={20} md:size={24} className="group-hover:rotate-12 transition" />
                 </span>
                 <motion.div
                   className="absolute inset-0 bg-[#FFFF00]/90"
@@ -377,10 +377,10 @@ export default function About() {
 
               <Button
                 variant="outline"
-                className="border-2 border-white/60 text-white px-16 py-7 rounded-full text-xl font-bold hover:bg-white/10 backdrop-blur-sm transition-all duration-500"
+                className="border-2 border-white/60 text-white px-12 md:px-16 py-5 md:py-7 rounded-full text-lg md:text-xl font-bold hover:bg-white/10 backdrop-blur-sm transition-all duration-500"
               >
                 Start Your Journey
-                <ChevronRight className="ml-3 inline" size={24} />
+                <ChevronRight className="ml-3 inline" size={20} md:size={24} />
               </Button>
             </motion.div>
 
@@ -389,7 +389,7 @@ export default function About() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.8 }}
-              className="mt-20 text-white/50 text-sm tracking-wider uppercase"
+              className="mt-12 md:mt-20 text-white/50 text-xs md:text-sm tracking-wider uppercase"
             >
               Limited to 18 weddings per year • Featured in Vogue, Harper's Bazaar & Junebug Weddings
             </motion.p>
@@ -400,35 +400,35 @@ export default function About() {
         <motion.div
           animate={{ y: [0, 15, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/60"
+          className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 text-white/60"
         >
-          <ChevronRight className="rotate-90" size={36} />
+          <ChevronRight className="rotate-90" size={28} md:size={36} />
         </motion.div>
       </section>
 
       {/* ===== OUR PHILOSOPHY ===== */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-20 md:py-32 bg-black text-white">
         <Container>
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
             >
-              <h2 className="text-5xl md:text-7xl font-black mb-12 leading-tight">
+              <h2 className="text-4xl md:text-7xl font-black mb-8 md:mb-12 leading-tight">
                 Your Love Deserves
                 <br />
                 <span className="text-[#FFFF00]">Art That Lasts Forever</span>
               </h2>
 
-              <p className="text-white/70 text-lg leading-relaxed mb-8">
+              <p className="text-white/70 text-base md:text-lg leading-relaxed mb-6 md:mb-8">
                 We believe the most powerful images come from trust, connection, and creative freedom.
                 That's why we limit our bookings each year — to give every couple the time, attention,
                 and artistry they truly deserve.
               </p>
 
-              <p className="text-white/70 text-lg leading-relaxed">
+              <p className="text-white/70 text-base md:text-lg leading-relaxed">
                 From intimate elopements to grand celebrations, we blend editorial precision with documentary heart,
                 creating galleries that feel like films you can step into — again and again.
               </p>
@@ -452,30 +452,30 @@ export default function About() {
       </section>
 
       {/* ===== WHAT SETS US APART ===== */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-20 md:py-32 bg-black text-white">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center max-w-6xl mx-auto mb-24"
+            className="text-center max-w-6xl mx-auto mb-16 md:mb-24"
           >
-            <h2 className="text-5xl md:text-7xl font-black mb-8">
+            <h2 className="text-4xl md:text-7xl font-black mb-6 md:mb-8">
               Why Couples Choose <span className="text-[#FFFF00]">Us</span>
             </h2>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
               We go beyond traditional photography to deliver an elevated, personalized experience from start to finish.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {[
-              { icon: <Heart size={52} />, title: "Deeply Emotional", desc: "We capture laughter, tears, quiet glances — the real, unscripted magic that makes your day yours." },
-              { icon: <Camera size={52} />, title: "Cinematic Mastery", desc: "Film-inspired color grading, flawless lighting, and editorial composition in every single image." },
-              { icon: <Sparkles size={52} />, title: "Timeless & Elegant", desc: "A signature style that blends modern romance with classic sophistication — never trendy, always iconic." },
-              { icon: <Clock size={52} />, title: "Limited Bookings", desc: "Only 20 weddings per year. This means more planning time, creativity, and dedication to your story." },
-              { icon: <Users size={52} />, title: "Full-Day Coverage", desc: "From getting ready to the last dance — no hour limits, no rushed moments." },
-              { icon: <Star size={52} />, title: "Heirloom Products", desc: "Fine art albums, framed prints, and custom wall galleries designed to be passed down for generations." },
+              { icon: <Heart size={40} md:size={52} />, title: "Deeply Emotional", desc: "We capture laughter, tears, quiet glances — the real, unscripted magic that makes your day yours." },
+              { icon: <Camera size={40} md:size={52} />, title: "Cinematic Mastery", desc: "Film-inspired color grading, flawless lighting, and editorial composition in every single image." },
+              { icon: <Sparkles size={40} md:size={52} />, title: "Timeless & Elegant", desc: "A signature style that blends modern romance with classic sophistication — never trendy, always iconic." },
+              { icon: <Clock size={40} md:size={52} />, title: "Limited Bookings", desc: "Only 20 weddings per year. This means more planning time, creativity, and dedication to your story." },
+              { icon: <Users size={40} md:size={52} />, title: "Full-Day Coverage", desc: "From getting ready to the last dance — no hour limits, no rushed moments." },
+              { icon: <Star size={40} md:size={52} />, title: "Heirloom Products", desc: "Fine art albums, framed prints, and custom wall galleries designed to be passed down for generations." },
             ].map((feature, i) => (
               <motion.div
                 key={i}
@@ -483,14 +483,14 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                whileHover={{ y: -16, scale: 1.03 }}
-                className="text-center group bg-white/5 backdrop-blur-sm border border-[#FFFF00]/20 rounded-3xl p-10 hover:bg-white/10 transition-all duration-500"
+                whileHover={{ y: -12, scale: 1.03 }}
+                className="text-center group bg-white/5 backdrop-blur-sm border border-[#FFFF00]/20 rounded-3xl p-6 md:p-10 hover:bg-white/10 transition-all duration-500"
               >
-                <div className="inline-flex items-center justify-center w-28 h-28 rounded-full bg-[#FFFF00]/10 border-2 border-[#FFFF00]/40 mb-8 group-hover:scale-110 transition">
+                <div className="inline-flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full bg-[#FFFF00]/10 border-2 border-[#FFFF00]/40 mb-6 md:mb-8 group-hover:scale-110 transition">
                   <div className="text-[#FFFF00]">{feature.icon}</div>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-5">{feature.title}</h3>
-                <p className="text-white/70 leading-relaxed">{feature.desc}</p>
+                <h3 className="text-xl md:text-3xl font-bold mb-4 md:mb-5">{feature.title}</h3>
+                <p className="text-white/70 text-sm md:text-base leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -498,43 +498,43 @@ export default function About() {
       </section>
 
       {/* ===== GALLERY PREVIEW ===== */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-20 md:py-32 bg-black text-white">
         <Container>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-12 md:mb-20"
           >
-            <h2 className="text-5xl md:text-7xl font-black mb-6">
+            <h2 className="text-4xl md:text-7xl font-black mb-4 md:mb-6">
               Moments That <span className="text-[#FFFF00]">Last Forever</span>
             </h2>
-            <p className="text-xl text-white/70">A glimpse into the emotion and artistry we bring to every wedding</p>
+            <p className="text-lg md:text-xl text-white/70">A glimpse into the emotion and artistry we bring to every wedding</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <motion.div whileHover={{ scale: 1.05 }} className="rounded-3xl overflow-hidden border border-[#FFFF00]/30">
-              <img src="https://thelane.com/wp-content/uploads/2022/02/Sophie-Tim-Reedit-4-scaled.jpg" alt="Cinematic romantic moment" className="w-full h-96 object-cover" />
+              <img src="https://thelane.com/wp-content/uploads/2022/02/Sophie-Tim-Reedit-4-scaled.jpg" alt="Cinematic romantic moment" className="w-full h-80 md:h-96 object-cover" />
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} className="rounded-3xl overflow-hidden border border-[#FFFF00]/30">
-              <img src="https://www.printique.com/wp-content/uploads/2019/06/wedding-poses-3.jpg" alt="Modern couple pose" className="w-full h-96 object-cover" />
+              <img src="https://www.printique.com/wp-content/uploads/2019/06/wedding-poses-3.jpg" alt="Modern couple pose" className="w-full h-80 md:h-96 object-cover" />
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} className="rounded-3xl overflow-hidden border border-[#FFFF00]/30">
-              <img src="https://jaidynmichele.com/wp-content/uploads/sites/32630/2023/05/BZ7A0337-1024x719.jpg" alt="Joyful bride and groom" className="w-full h-96 object-cover" />
+              <img src="https://jaidynmichele.com/wp-content/uploads/sites/32630/2023/05/BZ7A0337-1024x719.jpg" alt="Joyful bride and groom" className="w-full h-80 md:h-96 object-cover" />
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} className="rounded-3xl overflow-hidden border border-[#FFFF00]/30">
-              <img src="https://whimsical-cdn.wedissimo.com/2025/11/Black-and-White-Wedding-Photos.jpg" alt="Timeless black and white embrace" className="w-full h-96 object-cover" />
+              <img src="https://whimsical-cdn.wedissimo.com/2025/11/Black-and-White-Wedding-Photos.jpg" alt="Timeless black and white embrace" className="w-full h-80 md:h-96 object-cover" />
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} className="rounded-3xl overflow-hidden border border-[#FFFF00]/30">
-              <img src="https://susanstripling.com/wp-content/uploads/2024/01/08-oheka-castle-wedding-nighttime-sunset-wedding-photo-bride-and-groom.jpg" alt="Dramatic sunset portrait" className="w-full h-96 object-cover" />
+              <img src="https://susanstripling.com/wp-content/uploads/2024/01/08-oheka-castle-wedding-nighttime-sunset-wedding-photo-bride-and-groom.jpg" alt="Dramatic sunset portrait" className="w-full h-80 md:h-96 object-cover" />
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} className="rounded-3xl overflow-hidden border border-[#FFFF00]/30">
-              <img src="https://susanstripling.com/wp-content/uploads/2023/09/wedding-couple-in-the-rain-central-park-wedding-photography-scaled-e1706900815692.jpg" alt="Romantic rainy day moment" className="w-full h-96 object-cover" />
+              <img src="https://susanstripling.com/wp-content/uploads/2023/09/wedding-couple-in-the-rain-central-park-wedding-photography-scaled-e1706900815692.jpg" alt="Romantic rainy day moment" className="w-full h-80 md:h-96 object-cover" />
             </motion.div>
           </div>
 
-          <div className="text-center mt-16">
-            <Button className="bg-[#FFFF00] text-black px-16 py-6 rounded-full text-xl font-bold hover:scale-105 transition">
+          <div className="text-center mt-10 md:mt-16">
+            <Button className="bg-[#FFFF00] text-black px-12 md:px-16 py-5 md:py-6 rounded-full text-lg md:text-xl font-bold hover:scale-105 transition">
               Explore Complete Galleries
             </Button>
           </div>
@@ -542,20 +542,20 @@ export default function About() {
       </section>
 
       {/* ===== FINAL CTA ===== */}
-      <section className="py-28 bg-gradient-to-b from-black to-[#FFFF00]/5">
+      <section className="py-20 md:py-28 bg-gradient-to-b from-black to-[#FFFF00]/5">
         <Container className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-7xl font-black text-white mb-10">
+            <h2 className="text-4xl md:text-7xl font-black text-white mb-6 md:mb-10">
               Ready to Tell <span className="text-[#FFFF00]">Your</span> Story?
             </h2>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto mb-12">
+            <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8 md:mb-12">
               Limited 2026 dates remaining. Let's create something extraordinary together.
             </p>
-            <Button className="bg-[#FFFF00] text-black px-16 py-7 rounded-full text-2xl font-bold hover:scale-110 transition shadow-2xl">
+            <Button className="bg-[#FFFF00] text-black px-12 md:px-16 py-6 md:py-7 rounded-full text-xl md:text-2xl font-bold hover:scale-110 transition shadow-2xl">
               Inquire Now
             </Button>
           </motion.div>

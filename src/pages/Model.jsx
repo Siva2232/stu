@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"; // <-- Import Link
 import { Search } from "lucide-react";
 
 // WhatsApp business number
-const whatsappNumber = "15551234567";
+const whatsappNumber = "9746683778";
 
 // Inline WhatsApp SVG
 const WhatsAppIcon = ({ size = 24, className = "" }) => (

@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, ArrowLeft, Star, Check, Heart, Quote } from "lucide-react";
 
 // WhatsApp business number (replace with your actual Indian number)
-const whatsappNumber = "919876543210"; // Example Indian number
+const whatsappNumber = "9746683778"; // Example Indian number
 
 // Inline WhatsApp Icon
 const WhatsAppIcon = ({ size = 24, className = "" }) => (
@@ -46,7 +46,7 @@ function ProductCarousel({ images }) {
 const products = [
   {
     id: "elegant-wedding",
-    name: "Elegant Wedding Album",
+    name: "Classic Wedding Album",
     category: "Wedding",
     price: "₹35,999",
     pages: "50 Premium Layflat Pages",
@@ -106,7 +106,7 @@ export default function DetailedPage() {
       {/* Back Bar */}
       <div className="sticky top-0 z-40 bg-white/95 backdrop-blur shadow-sm py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <Link to="/shop" className="inline-flex items-center gap-3 text-gray-700 hover:text-amber-700 font-semibold transition">
+          <Link to="/models" className="inline-flex items-center gap-3 text-gray-700 hover:text-amber-700 font-semibold transition">
             <ArrowLeft size={28} />
             Back to Collection
           </Link>

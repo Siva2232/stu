@@ -27,7 +27,7 @@ const products = [
     price: "₹35,900",
     pages: "40 pages · Premium Layflat",
     description: "Timeless hardcover album with thick layflat pages for panoramic spreads.",
-    image: "https://images.unsplash.com/photo-1606213196839-7c12e4e26e74?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
   {
     id: 2,
@@ -45,7 +45,7 @@ const products = [
     price: "₹80,900",
     pages: "50 pages · Genuine Leather",
     description: "Handcrafted genuine leather album with embossing and archival paper.",
-    image: "https://images.unsplash.com/photo-1519733872085-2c3c0c5e0e5e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
   {
     id: 4,
@@ -63,7 +63,7 @@ const products = [
     price: "₹58,400",
     pages: "50 pages · Acrylic Cover",
     description: "Contemporary album with crystal acrylic cover and seamless panoramic pages.",
-    image: "https://images.unsplash.com/photo-1622483762023-4c38b8588f12?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
   {
     id: 6,
@@ -81,7 +81,7 @@ const products = [
     price: "₹71,900",
     pages: "60 pages · Velvet Cover",
     description: "Opulent velvet cover with gold foil detailing and thick archival pages.",
-    image: "https://images.unsplash.com/photo-1616627561839-074735c6f3f5?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
   {
     id: 8,
@@ -99,7 +99,7 @@ const products = [
     price: "₹25,100",
     pages: "36 pages · Hardcover",
     description: "Annual family album to capture a year's worth of memories.",
-    image: "https://images.unsplash.com/photo-1545231028-62386a9dd6d8?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
   {
     id: 10,
@@ -117,7 +117,7 @@ const products = [
     price: "₹29,600",
     pages: "40 pages · Clean Design",
     description: "Minimal white album with plenty of negative space for artistic layouts.",
-    image: "https://images.unsplash.com/photo-1617098900591-3b907b48c571?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
   {
     id: 12,
@@ -126,7 +126,7 @@ const products = [
     price: "₹89,900",
     pages: "60 pages · Gold Accents",
     description: "Limited gold-embossed luxury album for the most special occasions.",
-    image: "https://images.unsplash.com/photo-1571171637577-3e4f0e7d5c5e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1516961642265-531546e84af2?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
   },
 ];
 
@@ -272,7 +272,7 @@ export default function AlbumsShop() {
             className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 text-base md:text-lg font-bold hover:bg-gray-900 active:bg-gray-800 transition rounded-full shadow-xl"
           >
             <WhatsAppIcon size={28} className="flex-shrink-0" />
-            <span>Chat on WhatsApp</span>
+            <span>Order Now</span>
           </a>
         </div>
       </section>

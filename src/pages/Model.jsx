@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom"; // <-- Import Link
+import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 
-// WhatsApp business number
+// WhatsApp business number (Indian number as provided)
 const whatsappNumber = "9746683778";
 
 // Inline WhatsApp SVG
@@ -24,7 +24,7 @@ const products = [
     id: 1,
     category: "Wedding",
     name: "Classic Wedding Album",
-    price: "$399.00",
+    price: "₹35,900",
     pages: "40 pages · Premium Layflat",
     description: "Timeless hardcover album with thick layflat pages for panoramic spreads.",
     image: "https://images.unsplash.com/photo-1606213196839-7c12e4e26e74?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -33,7 +33,7 @@ const products = [
     id: 2,
     category: "Fashion",
     name: "Editorial Portfolio Book",
-    price: "$549.00",
+    price: "₹49,400",
     pages: "60 pages · Matte Finish",
     description: "Professional portfolio with sleek black cover and high-quality matte prints.",
     image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -42,7 +42,7 @@ const products = [
     id: 3,
     category: "Luxury",
     name: "Leather Bound Heirloom",
-    price: "$899.00",
+    price: "₹80,900",
     pages: "50 pages · Genuine Leather",
     description: "Handcrafted genuine leather album with embossing and archival paper.",
     image: "https://images.unsplash.com/photo-1519733872085-2c3c0c5e0e5e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -51,7 +51,7 @@ const products = [
     id: 4,
     category: "Family",
     name: "Family Memory Album",
-    price: "$299.00",
+    price: "₹26,900",
     pages: "30 pages · Softcover",
     description: "Everyday moments preserved in a beautiful softcover keepsake album.",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -60,7 +60,7 @@ const products = [
     id: 5,
     category: "Wedding",
     name: "Modern Flush Mount",
-    price: "$649.00",
+    price: "₹58,400",
     pages: "50 pages · Acrylic Cover",
     description: "Contemporary album with crystal acrylic cover and seamless panoramic pages.",
     image: "https://images.unsplash.com/photo-1622483762023-4c38b8588f12?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -69,7 +69,7 @@ const products = [
     id: 6,
     category: "Minimalist",
     name: "Clean Linen Album",
-    price: "$349.00",
+    price: "₹31,400",
     pages: "40 pages · Linen Cover",
     description: "Simple, elegant linen cover with clean white pages for a minimalist look.",
     image: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -78,7 +78,7 @@ const products = [
     id: 7,
     category: "Luxury",
     name: "Velvet Luxury Edition",
-    price: "$799.00",
+    price: "₹71,900",
     pages: "60 pages · Velvet Cover",
     description: "Opulent velvet cover with gold foil detailing and thick archival pages.",
     image: "https://images.unsplash.com/photo-1616627561839-074735c6f3f5?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -87,7 +87,7 @@ const products = [
     id: 8,
     category: "Fashion",
     name: "Lookbook Pro",
-    price: "$479.00",
+    price: "₹43,100",
     pages: "50 pages · Gloss Finish",
     description: "High-gloss fashion lookbook perfect for models and designers.",
     image: "https://images.unsplash.com/photo-1516961642265-531546e84af2?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -96,7 +96,7 @@ const products = [
     id: 9,
     category: "Family",
     name: "Year in Review Album",
-    price: "$279.00",
+    price: "₹25,100",
     pages: "36 pages · Hardcover",
     description: "Annual family album to capture a year's worth of memories.",
     image: "https://images.unsplash.com/photo-1545231028-62386a9dd6d8?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -105,7 +105,7 @@ const products = [
     id: 10,
     category: "Wedding",
     name: "Signature Guest Book Album",
-    price: "$449.00",
+    price: "₹40,400",
     pages: "40 pages · Guest Signing",
     description: "Wedding album with blank pages for guest messages and photos.",
     image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -114,7 +114,7 @@ const products = [
     id: 11,
     category: "Minimalist",
     name: "White Space Album",
-    price: "$329.00",
+    price: "₹29,600",
     pages: "40 pages · Clean Design",
     description: "Minimal white album with plenty of negative space for artistic layouts.",
     image: "https://images.unsplash.com/photo-1617098900591-3b907b48c571?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -123,7 +123,7 @@ const products = [
     id: 12,
     category: "Luxury",
     name: "Gold Edition Album",
-    price: "$999.00",
+    price: "₹89,900",
     pages: "60 pages · Gold Accents",
     description: "Limited gold-embossed luxury album for the most special occasions.",
     image: "https://images.unsplash.com/photo-1571171637577-3e4f0e7d5c5e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
@@ -206,7 +206,7 @@ export default function AlbumsShop() {
             {filteredProducts.map((product) => (
               <Link
                 key={product.id}
-                to={`/album/${product.id}`} // Navigate to detailed page
+                to={`/album/${product.id}`}
                 className="group block"
               >
                 <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
@@ -233,12 +233,11 @@ export default function AlbumsShop() {
                     <p className="text-xs md:text-sm text-gray-600 mb-2">{product.pages}</p>
                     <p className="text-xl md:text-2xl font-bold text-amber-600 mb-4">{product.price}</p>
 
-                    {/* WhatsApp Button - Stop propagation to prevent navigating when clicking button */}
                     <a
                       href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage(product)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()} // Prevent Link navigation
+                      onClick={(e) => e.stopPropagation()}
                       className="inline-flex flex-col md:flex-row items-center justify-center w-full gap-1 md:gap-2 bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold py-4 md:py-3.5 rounded-full transition text-xs md:text-sm shadow-md"
                     >
                       <WhatsAppIcon size={20} className="text-white flex-shrink-0" />

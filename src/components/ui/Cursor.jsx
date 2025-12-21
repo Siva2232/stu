@@ -51,9 +51,7 @@ export default function Cursor() {
         className={`relative flex items-center justify-center transition-all duration-500 ease-out
         ${isHovered ? "w-20 h-20" : "w-10 h-10"}`}
       >
-        {/* Soft glow */}
-        <div className="absolute inset-0 rounded-full shadow-[0_0_60px_20px_rgba(250,204,21,0.35)]" />
-
+        {/* Removed soft glow */}
         {/* Outer ring */}
         <div className="absolute inset-0 rounded-full border-2 border-yellow-400 mix-blend-difference" />
 

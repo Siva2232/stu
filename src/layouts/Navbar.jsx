@@ -7,7 +7,7 @@ import hhhh from '../assets/hhhh.jpg';
 const navLinks = [
   { name: "HOME", path: "/" },
   { name: "ABOUT US", path: "/about" },
-  { name: "MODELS", path: "/models" },
+  { name: "PRODUCTS", path: "/models" },
   { name: "PORTFOLIO", path: "/portfolio" },
   { name: "SERVICES", path: "/services" },
   { name: "CONTACT", path: "/contact" },

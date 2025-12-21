@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 
-// WhatsApp business number (Indian number as provided)
+// WhatsApp business number
 const whatsappNumber = "9746683778";
 
 // Inline WhatsApp SVG
@@ -233,15 +233,16 @@ export default function AlbumsShop() {
                     <p className="text-xs md:text-sm text-gray-600 mb-2">{product.pages}</p>
                     <p className="text-xl md:text-2xl font-bold text-amber-600 mb-4">{product.price}</p>
 
+                    {/* Smaller WhatsApp Button on Desktop */}
                     <a
                       href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage(product)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex flex-col md:flex-row items-center justify-center w-full gap-1 md:gap-2 bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold py-4 md:py-3.5 rounded-full transition text-xs md:text-sm shadow-md"
+                      className="inline-flex items-center justify-center w-full gap-2 bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-semibold py-2.5 rounded-full transition text-sm shadow-md"
                     >
-                      <WhatsAppIcon size={20} className="text-white flex-shrink-0" />
-                      <span className="whitespace-nowrap">Order on WhatsApp</span>
+                      <WhatsAppIcon size={18} className="flex-shrink-0" />
+                      <span>Order</span>
                     </a>
                   </div>
                 </div>
@@ -257,7 +258,7 @@ export default function AlbumsShop() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      {/* Bottom CTA - Reduced on Desktop */}
       <section className="py-16 md:py-20 bg-gradient-to-r from-amber-600 to-amber-700 text-black">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-black mb-4 md:mb-6">Bring Your Photos to Life</h2>
@@ -268,9 +269,9 @@ export default function AlbumsShop() {
             href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hi! I want to create a custom photograph album.')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex flex-col md:flex-row items-center gap-2 bg-black text-white px-8 md:px-12 py-5 md:py-6 text-lg md:text-xl font-bold hover:bg-gray-900 active:bg-gray-800 transition rounded-full shadow-xl"
+            className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 text-base md:text-lg font-bold hover:bg-gray-900 active:bg-gray-800 transition rounded-full shadow-xl"
           >
-            <WhatsAppIcon size={32} className="text-white flex-shrink-0" />
+            <WhatsAppIcon size={28} className="flex-shrink-0" />
             <span>Chat on WhatsApp</span>
           </a>
         </div>

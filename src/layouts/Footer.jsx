@@ -27,13 +27,38 @@ export default function Footer() {
     { label: "Contact", href: "/contact" },
   ];
 
+  // High-quality, carefully selected fashion images matching each title
   const works = [
-    "Editorial Noir",
-    "Golden Hour",
-    "Runway Edge",
-    "Avant Garde",
-    "Studio Minimal",
-    "Beauty Focus",
+    {
+      title: "Editorial Noir",
+      image: "https://images.pexels.com/photos/33142583/pexels-photo-33142583.jpeg?auto=compress&cs=tinysrgb&w=2070",
+      href: "/portfolio/editorial-noir",
+    },
+    {
+      title: "Golden Hour",
+      image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      href: "/portfolio/golden-hour",
+    },
+    {
+      title: "Runway Edge",
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=2070",
+      href: "/portfolio/runway-edge",
+    },
+    {
+      title: "Avant Garde",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      href: "/portfolio/avant-garde",
+    },
+    {
+      title: "Studio Minimal",
+      image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      href: "/portfolio/studio-minimal",
+    },
+    {
+      title: "Beauty Focus",
+      image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      href: "/portfolio/beauty-focus",
+    },
   ];
 
   const companyName = "PERFECT DIGITAL PRESS";
@@ -51,10 +76,7 @@ export default function Footer() {
   };
 
   const letterVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 100,
-    },
+    hidden: { opacity: 0, y: 100 },
     visible: {
       opacity: 1,
       y: 0,
@@ -70,8 +92,7 @@ export default function Footer() {
     <footer className="relative bg-[#0A0A0A] text-white overflow-hidden">
       <Container className="relative z-10 pt-12 pb-12 md:pt-16 md:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-10">
-
-          {/* BRAND + LOGO - tighter spacing */}
+          {/* BRAND + LOGO */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,16 +100,13 @@ export default function Footer() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-5 space-y-6"
           >
-            {/* Logo - fixed sizes + premium compact card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
               whileHover={{ scale: 1.05 }}
-              className="w-30 h-30 sm:w-30 sm:h-30 md:w-30 md:h-30 lg:w-30 lg:h-30 mx-auto lg:mx-0 
-                         bg-yellow-500/20 backdrop-blur-md rounded-3xl border-2 border-yellow-500/50 
-                         flex items-center justify-center shadow-2xl overflow-hidden"
+              className="w-32 h-32 mx-auto lg:mx-0 bg-yellow-500/20 backdrop-blur-md rounded-3xl border-2 border-yellow-500/50 flex items-center justify-center shadow-2xl overflow-hidden"
             >
               <img
                 src={hhhh}
@@ -103,7 +121,6 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Social Icons - closer */}
             <div className="flex justify-center lg:justify-start gap-4 md:gap-5">
               {socials.map((social, i) => (
                 <motion.a
@@ -123,7 +140,7 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* RECENT WORK - tighter */}
+          {/* RECENT WORK */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +153,7 @@ export default function Footer() {
             </h3>
 
             <div className="grid grid-cols-3 gap-2 md:gap-3">
-              {works.map((item, i) => (
+              {works.map((work, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -144,17 +161,24 @@ export default function Footer() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
                   whileHover={{ scale: 1.08 }}
-                  className="group aspect-square rounded-xl bg-white/5 border border-white/10 flex items-end p-3 hover:border-yellow-500/40 hover:bg-yellow-500/5 transition-all duration-400"
+                  className="group aspect-square rounded-xl overflow-hidden relative cursor-pointer"
                 >
-                  <span className="text-xs text-gray-300 font-medium group-hover:text-yellow-400 transition-colors duration-300">
-                    {item}
+                  <img
+                    src={work.image}
+                    alt={work.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-xs font-medium text-gray-100 group-hover:text-yellow-400 transition-colors duration-300 z-10">
+                    {work.title}
                   </span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
-          {/* NAV + CONTACT - tighter */}
+          {/* NAV + CONTACT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -177,15 +201,10 @@ export default function Footer() {
                   >
                     <a
                       href={link.href}
-                      className="group flex items-center justify-center lg:justify-start
-                                 text-base text-gray-300
-                                 hover:text-yellow-400 transition-all duration-300"
+                      className="group flex items-center justify-center lg:justify-start text-base text-gray-300 hover:text-yellow-400 transition-all duration-300"
                     >
                       {link.label}
-                      <ArrowUpRight
-                        className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100
-                                   translate-x-2 group-hover:translate-x-0 text-yellow-400 transition-all"
-                      />
+                      <ArrowUpRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 text-yellow-400 transition-all duration-300" />
                     </a>
                   </motion.li>
                 ))}
@@ -197,18 +216,15 @@ export default function Footer() {
                 Contact
               </h3>
 
-              <a
-                href="mailto:hello@modelstudio.coop"
-                className="flex items-center justify-center lg:justify-start gap-3 hover:text-yellow-400 transition"
-              >
+              <a href="mailto:hello@perfectdigitalpress.com" className="flex items-center justify-center lg:justify-start gap-3 hover:text-yellow-400 transition">
                 <Mail className="w-5 h-5 text-yellow-500" />
-                hello@modelstudio.coop
+                hello@perfectdigitalpress.com
               </a>
 
-              <p className="flex items-center justify-center lg:justify-start gap-3">
+              <a href="tel:+15559876543" className="flex items-center justify-center lg:justify-start gap-3 hover:text-yellow-400 transition">
                 <Phone className="w-5 h-5 text-yellow-500" />
                 +1 (555) 987-6543
-              </p>
+              </a>
 
               <p className="flex items-start justify-center lg:justify-start gap-3 leading-relaxed">
                 <MapPin className="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0" />
@@ -221,60 +237,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* LARGE BOTTOM TEXT - reduced top margin */}
-       {/* <motion.div
-  variants={containerVariants}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, margin: "-100px" }}
-  className="
-    mt-16 md:mt-20 lg:mt-24
-    text-center
-    px-4
-    overflow-visible md:overflow-hidden
-  "
->
-  <h1
-    className="
-      max-w-[95vw] md:max-w-none
-      text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl
-      leading-[1.15] sm:leading-[1.1] md:leading-none
-      font-black tracking-tight
-      whitespace-normal md:whitespace-nowrap
-      bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500
-      bg-clip-text text-transparent
-    "
-    style={{
-      textShadow: "0 6px 30px rgba(0,0,0,0.8)",
-      textWrap: "balance",
-    }}
-  >
-    {letters.map((letter, i) => (
-      <motion.span
-        key={i}
-        variants={letterVariants}
-        className={`inline-block ${
-          letter === " "
-            ? "w-2 sm:w-4 md:w-8 lg:w-12 xl:w-16"
-            : ""
-        }`}
-      >
-        {letter === " " ? "\u00A0" : letter}
-      </motion.span>
-    ))}
-  </h1>
-
-  <motion.div
-    initial={{ width: 0 }}
-    whileInView={{ width: "80%" }}
-    viewport={{ once: true }}
-    transition={{ duration: 2, delay: 1.2, ease: "easeOut" }}
-    className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mt-6 md:mt-8 max-w-4xl"
-  />
-</motion.div> */}
-
-
-        {/* Copyright & Legal - reduced margin */}
+        {/* Copyright & Legal */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400 px-4">
           <p>© {new Date().getFullYear()} Perfect Digital Press. All Rights Reserved.</p>
 

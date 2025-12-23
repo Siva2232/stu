@@ -159,10 +159,12 @@ export default function Portfolio() {
           transition={{ delay: 0.5 }}
           className="text-center mt-24 md:mt-32"
         >
-          <button className="inline-flex items-center gap-4 bg-yellow-500 text-black px-12 py-6 rounded-full text-xl font-black hover:bg-yellow-400 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/40 transition-all duration-500">
-            VIEW FULL GALLERIES
-            <span className="text-2xl">→</span>
-          </button>
+          <a href="/portfolio">
+            <button className="inline-flex items-center gap-4 bg-yellow-500 text-black px-12 py-6 rounded-full text-xl font-black hover:bg-yellow-400 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/40 transition-all duration-500">
+              VIEW FULL GALLERIES
+              <span className="text-2xl">→</span>
+            </button>
+          </a>
         </motion.div>
       </Container>
     </section>

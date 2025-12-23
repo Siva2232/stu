@@ -109,6 +109,7 @@ export default function Services() {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="mt-12"
             >
+              <a href="/services">
               <Button
                 variant="secondary"
                 size="lg"
@@ -116,6 +117,7 @@ export default function Services() {
               >
                 DISCOVER TALENT
               </Button>
+              </a>
             </motion.div>
           </div>
         </Container>

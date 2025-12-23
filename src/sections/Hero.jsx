@@ -356,9 +356,15 @@ export default function HeroBook() {
 
           {/* Buttons */}
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-yellow-500 text-black px-8 py-4 rounded-full font-bold">
-              View Portfolio
-            </Button>
+            <a
+  href="/portfolio"
+  style={{ display: "contents" }}
+>
+  <Button className="bg-yellow-500 text-black px-8 py-4 rounded-full font-bold">
+    View Portfolio
+  </Button>
+</a>
+
             <Button
               variant="outline"
               className="border-white/40 text-white px-8 py-4 rounded-full"

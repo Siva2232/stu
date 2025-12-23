@@ -363,6 +363,7 @@ export default function About() {
   transition={{ duration: 1, delay: 1.2 }}
   className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center"
 >
+  <a href="/models">
   <Button className="group relative overflow-hidden bg-[#f7ef22] text-black px-10 md:px-12 py-3 md:py-4 rounded-full text-base md:text-base font-bold hover:scale-105 transition-all duration-500 shadow-2xl">
     <span className="relative z-10 flex items-center gap-2 md:gap-2.5">
       View Wedding Galleries
@@ -375,6 +376,7 @@ export default function About() {
       transition={{ duration: 0.4 }}
     />
   </Button>
+  </a>
 
   <Button
     variant="outline"
@@ -536,9 +538,11 @@ export default function About() {
           </div>
 
           <div className="text-center mt-10 md:mt-16">
+             <a href="/services">
             <Button className="bg-[#f7ef22] text-black px-12 md:px-16 py-5 md:py-6 rounded-full text-lg md:text-xl font-bold hover:scale-105 transition">
               Explore Complete Galleries
             </Button>
+            </a>
           </div>
         </Container>
       </section>
@@ -557,9 +561,16 @@ export default function About() {
             <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8 md:mb-12">
               Limited 2026 dates remaining. Let's create something extraordinary together.
             </p>
+           <a
+            href="https://wa.me/1234567890?text=Hello%20I%20would%20like%20to%20inquire%20about%20your%20services"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button className="bg-[#f7ef22] text-black px-12 md:px-16 py-6 md:py-7 rounded-full text-xl md:text-2xl font-bold hover:scale-110 transition shadow-2xl">
               Inquire Now
             </Button>
+          </a>
+
           </motion.div>
         </Container>
       </section>
